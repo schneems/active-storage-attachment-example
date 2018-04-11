@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @comment.content %>
+  <%= link_to "attachment", rails_blob_path(@comment.attachment, disposition: "attachment") %>
+  <%= image_tag @comment.attachment.preview(resize: "200x200>") %>
+</p>
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>
